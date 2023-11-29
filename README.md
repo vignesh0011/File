@@ -27,44 +27,45 @@ struct student
     public string department;
     public int percentage;
 };
-class HelloWorld {
-    
-    void writer(string name, int age, string department,int percentage, int i)
+class HelloWorld
+{
+
+    void writer(string name, int age, string department, int percentage, int i)
     {
-FileStream fs= new FileStream("file.txt", FileMode.Append, FileAccess.Write);
-StreamWriter sw = new StreamWriter(fs);
-sw.WriteLine("Name of the student {0} is {1}",i,name);
-sw.WriteLine("Age of the student {0} is {1}",i,age);
-sw.WriteLine("Department of the student {0} is {1}",i,department);
-sw.WriteLine("percentage of the student {0} is {1}",i,percentage);
-      
-      sw.Close();
-      fs.Close();
+        FileStream fs = new FileStream("file.txt", FileMode.Append, FileAccess.Write);
+        StreamWriter sw = new StreamWriter(fs);
+        sw.WriteLine("Name of the student {0} is {1}", i, name);
+        sw.WriteLine("Age of the student {0} is {1}", i, age);
+        sw.WriteLine("Department of the student {0} is {1}", i, department);
+        sw.WriteLine("percentage of the student {0} is {1}", i, percentage);
+
+        sw.Close();
+        fs.Close();
     }
-  static void Main() {
-      int n,i;
-      FileStream fs= new FileStream("file.txt", FileMode.Create, FileAccess.Write);
-      fs.Close();
-  Console.WriteLine("Enter the number of Students");
-  n = Convert.ToInt32(Console.ReadLine());
-  student[] s= new student[n];
-  for(i=0;i<n;i++)
-  {
-      Console.WriteLine("Enter the name");
-      s[i].name=Console.ReadLine();
-      Console.WriteLine("Enter the age");
-      s[i].age=Convert.ToInt32(Console.ReadLine());
-      Console.WriteLine("Enter the department");
-      s[i].department= Console.ReadLine();
-      Console.WriteLine("Enter the percentage");
-      s[i].percentage=Convert.ToInt32(Console.ReadLine());
-      HelloWorld hw=new HelloWorld();
-      hw.writer(s[i].name,s[i].age,s[i].department,s[i].percentage,i+1);
-      Console.WriteLine();
-  }
-  }
-}
-```
+    static void Main()
+    {
+        int n, i;
+        FileStream fs = new FileStream("file.txt", FileMode.Create, FileAccess.Write);
+        fs.Close();
+        Console.WriteLine("Enter the number of Students");
+        n = Convert.ToInt32(Console.ReadLine());
+        student[] s = new student[n];
+        for (i = 0; i < n; i++)
+        {
+            Console.WriteLine("Enter the name");
+            s[i].name = Console.ReadLine();
+            Console.WriteLine("Enter the age");
+            s[i].age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the department");
+            s[i].department = Console.ReadLine();
+            Console.WriteLine("Enter the percentage");
+            s[i].percentage = Convert.ToInt32(Console.ReadLine());
+            HelloWorld hw = new HelloWorld();
+            hw.writer(s[i].name, s[i].age, s[i].department, s[i].percentage, i + 1);
+            Console.WriteLine();
+        }
+    }
+}```
 ## Output:
 ![Screenshot 2023-11-08 233822](https://github.com/kaviya2839/File/assets/120553351/10ecbead-0fd0-471f-a568-86ed1796db7e)
 
